@@ -1,0 +1,193 @@
+.prowp-dashboard-page {
+	.wrap {
+		margin-right: 0;
+	}
+
+	#wpcontent {
+		padding-left: 0;
+	}
+
+	.update-nag {
+		margin-bottom: 20px;
+		margin-left: 22px;
+	}
+
+	&.edit-php #wpbody-content .wrap {
+		padding: 0 20px;
+		margin: 0;
+	}
+}
+
+.prowp-dashboard-header {
+	background-color: #ffffff;
+	border-block-end: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 0 20px;
+	text-align: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+    box-shadow: 0 1px 10px 0 rgba(0,0,0,0.04);
+
+	h1 {
+		font-size: 16.25px;
+		font-weight: bold;
+		padding-block-end: 0;
+        margin-block: 0;
+		display: flex;
+		align-items: center;
+        color: #50575e;
+	}
+
+	&__navigation {
+		display: flex;
+
+		a {
+			padding: 0.5rem 1.5rem;
+			display: flex;
+			align-items: center;
+			color: inherit;
+			text-decoration: none;
+
+			&.active {
+				font-weight: 600;
+				box-shadow: inset 0 -2px var(--wp-admin-theme-color);
+                background-color: #f0f0f1;
+			}
+
+            &:where(:not(.active)) {
+                &:hover {
+                    box-shadow: inset 0 -2px var(--wp-admin-theme-color-darker-20);
+                    color: #ffffff;
+                    background-color: var(--wp-admin-theme-color);
+                }
+            }
+		}
+	}
+}
+
+.prowp-dashboard {
+	max-width: 1000px;
+	margin: 40px auto;
+	font-size: 14px;
+    line-height: 1.5;
+
+	.components-panel__header {
+		font-size: 14px;
+		font-weight: bold;
+	}
+
+	.components-panel__body-toggle.components-button {
+		font-size: 14px;
+		font-weight: normal;
+	}
+
+    .components-panel__row {
+		min-height: 0;
+
+        ol {
+            margin-block: 0.75em;
+			list-style: none;
+			padding-inline-start: 0;
+			margin-inline-start: 0;
+
+			li {
+				display: flex;
+				align-items: center;
+				gap: 1em;
+				margin-block-end: 0;
+
+				&::before {
+					counter-increment: list-item;
+					content: counter(list-item);
+					font-size: 13px;
+					line-height: calc(1.75em - 2px);
+					width: 1.75em;
+					height: 1.75em;
+					flex: 0 0 auto;
+					border-radius: 50%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					border: 1px solid #e0e0e0;
+					background-color: #f0f0f1;
+					box-shadow: inset 0 0 1px 1px #fff;
+					color: #50575e;
+					align-self: flex-start;
+				}
+
+				& + li {
+					margin-block-start: 0.55em;
+				}
+			}
+        }
+    }
+}
+
+@media (max-width: 768px) {
+	.prowp-dashboard-header {
+		flex-direction: column;
+	}
+
+	.prowp-dashboard {
+		padding-inline: 20px;
+	}
+}
+
+@media (max-width: 600px) {
+    #wpbody {
+        padding-top: 0;
+    }
+}
+
+.prowp-dashboard {
+    & a {
+        color: var(--wp-admin-theme-color);
+
+        &:hover {
+            color: var(--wp-admin-theme-color-darker-20);
+        }
+    }
+
+    /* Dashboard: Section title */
+    & .prowp-dashboard__section-title {
+        font-size: 20.28px;
+    }
+
+    /* Dashboard: Section subtitle */
+    & .prowp-dashboard__section-subtitle {
+        font-size: 16.25px;
+    }
+
+    & .prowp-dashboard__section-description {
+        color: #50575e;
+    }
+}
+
+.prowp-dashboard__guide-modal {
+    & .components-modal__content {
+        max-width: 312px;
+    }
+
+    & .components-guide__footer {
+        width: auto;
+    }
+
+    & .prowp-dashbord__guide-head {
+        padding-inline: 32px;
+        width: auto;
+    }
+
+    & .prowp-dashbord__guide-help-link {
+        color: #50575e;
+    }
+
+    & .prowp-dashbord__guide-heading {
+        font-size: 20.28px;
+        margin-block-start: 20px;
+    }
+
+    & .prowp-dashbord__guide-text {
+        margin-block-start: 0;
+        padding-inline: 32px;
+    }
+}
